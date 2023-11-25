@@ -1,0 +1,60 @@
+.app-container {
+    background-color: beige;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .todo-list-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .task-form {
+    margin-bottom: 20px;
+  }
+  
+  .task-columns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .task-column {
+    flex: 1;
+    background-color: beige;
+    padding: 15px;
+    margin-right: 10px;
+  }
+  
+  .task-column:hover {
+    background-color: burlywood;
+  }
+  .kanban-container {
+    display: flex;
+  }
+  
+  .kanban-column {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: grab;
+  }
