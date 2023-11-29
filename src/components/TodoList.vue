@@ -48,6 +48,13 @@ const onDrop = (toColumnIndex) => {
   const task = columns.value[fromColumnIndex].tasks.splice(taskIndex, 1)[0];
   columns.value[toColumnIndex].tasks.push(task);
 };
+const removeTask = (event, columnIndex, taskIndex) => {
+  // Empêcher le clic de se propager à d'autres éléments
+  event.stopPropagation();
+
+  // Supprimer la tâche de la colonne
+  columns.value[columnIndex].tasks.splice(taskIndex, 1);
+};
 </script>
 
 <template>
@@ -60,6 +67,7 @@ const onDrop = (toColumnIndex) => {
         <ul>
           <li v-for="(task, taskIndex) in column.tasks" :key="taskIndex" draggable="true" @dragstart="onDragStart(columnIndex, taskIndex)">
             {{ task.text }} - {{ task.category }}
+            <button @click="($event) => removeTask($event, columnIndex, taskIndex)">Supprimer</button>
           </li>
         </ul>
       </div>
